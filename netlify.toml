@@ -1,0 +1,74 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://script.google.com https://script.googleusercontent.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https://i.ytimg.com https://img.youtube.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; frame-src 'self' https://www.google.com https://maps.google.com https://www.youtube.com https://www.youtube-nocookie.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Resource-Policy = "same-origin"
+
+[[redirects]]
+  from = "/contacto.php"
+  to = "/contacto"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/servicios-outsourcing-contable.php"
+  to = "/servicios/outsourcing-contable"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/servicios-outsourcing-tributario.php"
+  to = "/servicios/outsourcing-tributario"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/alta-consulting-mision.php"
+  to = "/sobre-nosotros"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/alta-consulting-vision.php"
+  to = "/sobre-nosotros"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/videos.php"
+  to = "/recursos"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/servicios-outsourcing-finanzas.php"
+  to = "/servicios/outsourcing-finanzas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/por-que-elegirnos.php"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.altaconsulting.pe/*"
+  to = "https://altaconsulting.pe/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

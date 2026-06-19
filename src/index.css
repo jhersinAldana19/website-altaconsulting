@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 bg-white font-sans text-[14px] font-normal leading-[26.6px] text-slate-700 antialiased;
+  }
+
+  * {
+    @apply border-slate-200;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  /** Titular de sección: 27px / 32.4px, peso 400, color heading (#161d52). */
+  .type-section-title {
+    @apply text-section font-normal text-heading;
+  }
+  /** Misma escala sobre fondos oscuros (p. ej. magnitudes azul primario). */
+  .type-section-title-invert {
+    @apply text-section font-normal text-white;
+  }
+}
+
+:root {
+  /* Accent color variables for decorative use (reusable) */
+  --accent: #169bd5;
+  --accent-18: rgba(22, 155, 213, 0.18);
+  --accent-16: rgba(22, 155, 213, 0.16);
+  --accent-14: rgba(22, 155, 213, 0.14);
+  --accent-12: rgba(22, 155, 213, 0.12);
+}
+
+/* Surface greys for section backgrounds (reusable) */
+:root {
+  /* Base surface for section backgrounds (corporate light gray) */
+  --surface-base: #eef3f7; /* requested base */
+  /* Diagonal / band tone used as secondary gray */
+  --surface-diagonal: #dde5ec;
+  /* Additional diagonal palette for layered polygons */
+  --surface-diag-2: #e5ebf0;
+  --surface-diag-3: #d8e0e7;
+}
