@@ -1,45 +1,47 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import AppButton from './AppButton'
 
-function ButtonLink({ href, variant = 'primary', shape = 'default', className = '', children, ...props }) {
-  const variants = {
-    primary:
-      'bg-primary text-white hover:bg-accent active:bg-accent/80 focus-visible:outline-primary',
-    secondary:
-      'bg-white text-primary ring-1 ring-primary/25 hover:bg-accent hover:text-white active:bg-primary active:text-white focus-visible:outline-accent',
-    'outline-white':
-      'bg-transparent border border-white text-white hover:bg-white/5 active:bg-white/10 focus-visible:outline-white',
-    enterprise:
-      'border border-primary bg-transparent text-primary hover:bg-primary hover:text-white active:bg-accent active:text-white focus-visible:outline-primary',
-  }
+const VARIANT_PROPS = {
+  primary: { outlined: false },
+  secondary: { outlined: true, severity: 'secondary' },
+  'outline-white': { outlined: true },
+  enterprise: { outlined: true },
+}
 
-  const isAbsolute = href && href.startsWith('/')
-  const shapes = {
-    default: 'rounded-sm',
-    enterprise: 'rounded-none',
-  }
-  const selectedShape = shapes[shape] ?? shapes.default
-  const baseClassName = `inline-flex items-center justify-center ${selectedShape} px-6 py-3 text-sm font-semibold transition-colors duration-200 ease-out sm:px-8 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${variants[variant]} ${className}`
+function ButtonLink({ href, variant = 'primary', size, className = '', children, target, rel, ...props }) {
+  const navigate = useNavigate()
+  const variantConfig = VARIANT_PROPS[variant] ?? VARIANT_PROPS.primary
+  const label = typeof children === 'string' ? children : undefined
 
-  if (isAbsolute) {
-    return (
-      <Link
-        to={href}
-        className={baseClassName}
-        {...props}
-      >
-        {children}
-      </Link>
-    )
+  const handleClick = () => {
+    if (!href) return
+
+    if (href.startsWith('/')) {
+      navigate(href)
+      return
+    }
+
+    if (target === '_blank') {
+      window.open(href, '_blank', rel?.includes('noopener') ? 'noopener,noreferrer' : undefined)
+      return
+    }
+
+    window.location.href = href
   }
 
   return (
-    <a
-      href={href}
-      className={baseClassName}
+    <AppButton
+      type="button"
+      variant={variant}
+      size={size}
+      label={label}
+      {...variantConfig}
+      className={className}
+      onClick={handleClick}
       {...props}
     >
-      {children}
-    </a>
+      {!label ? children : undefined}
+    </AppButton>
   )
 }
 

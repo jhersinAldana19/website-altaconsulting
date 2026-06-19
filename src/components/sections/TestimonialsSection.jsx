@@ -15,7 +15,7 @@ function TestimonialsSection() {
 
       <Container className="relative z-10">
         <SectionHeading title="Experiencias de clientes que fortalecieron su operación" />
-        <div className="grid gap-8 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8">
+        <div className="grid items-start gap-8 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8">
           {TESTIMONIALS.map((item, index) => (
             <Reveal key={item.id} delayMs={index * 75}>
               <TestimonialCard testimonial={item} />

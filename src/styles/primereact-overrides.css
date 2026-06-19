@@ -1,0 +1,89 @@
+/* Cargado al final: refuerza botones PrimeReact sobre Tailwind preflight. */
+.p-button.app-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.75rem 2rem !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  border-radius: 0.125rem;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.p-button.app-btn .p-button-label {
+  font-weight: 600;
+  line-height: 1.25rem;
+}
+
+.p-button.app-btn-sm {
+  min-height: 2.25rem;
+  padding: 0.375rem 0.875rem !important;
+  font-size: 0.75rem;
+}
+
+.p-button.app-btn-primary {
+  background-color: #243a80 !important;
+  border-color: #243a80 !important;
+  color: #ffffff !important;
+}
+
+.p-button.app-btn-primary:enabled:hover,
+.p-button.app-btn-primary:enabled:focus-visible {
+  background-color: #169bd5 !important;
+  border-color: #169bd5 !important;
+  color: #ffffff !important;
+}
+
+.p-button.app-btn-secondary {
+  background-color: #ffffff !important;
+  border-color: rgba(22, 29, 82, 0.25) !important;
+  color: #161d52 !important;
+}
+
+.p-button.app-btn-secondary:enabled:hover,
+.p-button.app-btn-secondary:enabled:focus-visible {
+  background-color: #169bd5 !important;
+  border-color: #169bd5 !important;
+  color: #ffffff !important;
+}
+
+.p-button.app-btn-outline-white {
+  background-color: transparent !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.p-button.app-btn-outline-white:enabled:hover,
+.p-button.app-btn-outline-white:enabled:focus-visible {
+  background-color: rgba(255, 255, 255, 0.18) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+@media (max-width: 639px) {
+  .p-button.app-btn-hero {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 2.625rem;
+    padding: 0.5rem 0.625rem !important;
+    font-size: 0.75rem;
+  }
+
+  .p-button.app-btn-hero .p-button-label {
+    white-space: normal;
+    line-height: 1.15;
+    text-align: center;
+  }
+}
+
+.p-button.app-btn-primary:disabled,
+.p-button.app-btn-secondary:disabled,
+.p-button.app-btn-outline-white:disabled {
+  opacity: 0.65;
+}

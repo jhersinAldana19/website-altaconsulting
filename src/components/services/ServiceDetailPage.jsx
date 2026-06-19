@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Button } from 'primereact/button'
 import Footer from '../layout/Footer'
 import Header from '../layout/Header'
 import Container from '../layout/Container'
@@ -206,13 +207,13 @@ function ServiceDetailPage({ serviceId }) {
                   ))}
                 </ul>
                 {service.highlights.length > 6 ? (
-                  <button
+                  <Button
                     type="button"
+                    link
+                    label={showAllHighlights ? 'Ver menos alcance' : 'Ver alcance completo'}
                     onClick={() => setShowAllHighlights((previous) => !previous)}
-                    className="mt-5 text-sm font-semibold text-primary underline decoration-primary/30 underline-offset-4 transition hover:text-accent"
-                  >
-                    {showAllHighlights ? 'Ver menos alcance' : 'Ver alcance completo'}
-                  </button>
+                    className="mt-5 !p-0"
+                  />
                 ) : null}
               </div>
 

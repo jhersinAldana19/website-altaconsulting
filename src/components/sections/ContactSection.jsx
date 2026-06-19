@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Phone } from 'lucide-react'
+import AppButton from '../ui/AppButton'
 import contactFormImage from '../../assets/contact/imagen_formulario.webp'
 import contactSuccessImage from '../../assets/contact/información_enviada.webp'
 import Container from '../layout/Container'
@@ -204,13 +205,13 @@ function ContactSection() {
               ) : null}
 
               <div className="pt-1">
-                <button
+                <AppButton
                   type="submit"
+                  variant="primary"
+                  label={isSubmitting ? 'Enviando...' : 'Programar una consulta'}
+                  loading={isSubmitting}
                   disabled={isSubmitting}
-                  className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-60"
-                >
-                  {isSubmitting ? 'Enviando...' : 'Programar una consulta'}
-                </button>
+                />
               </div>
             </form>
           </Reveal>
@@ -221,7 +222,6 @@ function ContactSection() {
               alt="Equipo de ALTA CONSULTING"
               className="h-full min-h-[620px] w-full object-cover"
             />
-            <div className="absolute inset-0 bg-primary/20" aria-hidden />
             <div className="absolute bottom-6 left-6 right-6 flex items-center gap-3 bg-white px-5 py-4 text-primary">
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-accent/10">
                 <Phone size={18} />
@@ -248,14 +248,16 @@ function ContactSection() {
             role="status"
             aria-live="polite"
           >
-            <button
+            <Button
               type="button"
+              icon="pi pi-times"
+              rounded
+              text
+              severity="secondary"
               onClick={handleNewRequest}
-              className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              className="!absolute right-3 top-3"
               aria-label="Cerrar confirmacion"
-            >
-              <span aria-hidden>×</span>
-            </button>
+            />
 
             <img
               src={contactSuccessImage}
@@ -269,13 +271,13 @@ function ContactSection() {
               Recibimos tu solicitud correctamente. Nuestro equipo se pondrá en contacto contigo
               pronto.
             </p>
-            <button
+            <AppButton
               type="button"
+              variant="primary"
+              label="Entendido"
               onClick={handleNewRequest}
-              className="mt-5 inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-            >
-              Entendido
-            </button>
+              className="mt-5"
+            />
           </div>
         </div>
       ) : null}

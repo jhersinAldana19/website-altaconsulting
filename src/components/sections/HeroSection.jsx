@@ -105,9 +105,13 @@ function HeroSection() {
           <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/90">
             {HERO_CONTENT.description}
           </p>
-          <div className="mx-auto mt-8 flex w-full max-w-sm items-center justify-center gap-3 sm:mx-0 sm:w-auto sm:max-w-none sm:justify-start sm:gap-4">
-            <ButtonLink href="/contacto" className="min-w-0 flex-1 whitespace-nowrap px-4 text-sm sm:flex-none sm:px-8">Solicitar asesoría</ButtonLink>
-            <ButtonLink href="/servicios" variant="outline-white" className="min-w-0 flex-1 whitespace-nowrap px-4 text-sm sm:flex-none sm:px-8">Ver servicios</ButtonLink>
+          <div className="mx-auto mt-8 flex w-full flex-row items-stretch gap-2 sm:mx-0 sm:w-auto sm:items-center sm:gap-4">
+            <ButtonLink href="/contacto" className="app-btn-hero min-w-0 flex-1 sm:flex-none sm:min-w-[12rem]">
+              Solicitar asesoría
+            </ButtonLink>
+            <ButtonLink href="/servicios" variant="outline-white" className="app-btn-hero min-w-0 flex-1 sm:flex-none sm:min-w-[12rem]">
+              Ver servicios
+            </ButtonLink>
           </div>
         </div>
       </Container>

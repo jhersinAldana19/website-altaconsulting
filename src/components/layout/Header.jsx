@@ -1,6 +1,7 @@
-import { Menu, X, ChevronDown, Search } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Button } from 'primereact/button'
 import { NAV_ITEMS } from '../../constants/navigation'
 import { SOCIAL_LINKS } from '../../data/siteContent'
 import logoColor from '../../assets/branding/logo_color.webp'
@@ -181,21 +182,18 @@ function Header() {
             >
               {item.label}
             </Link>
-            <button
+            <Button
               type="button"
+              icon="pi pi-chevron-down"
+              text
+              rounded
+              severity="secondary"
               onClick={() =>
                 setOpenSubmenu(openSubmenu === item.label ? null : item.label)
               }
               aria-label={`Mostrar submenu de ${item.label}`}
-              className="rounded-md p-2 text-slate-700 hover:bg-slate-50"
-            >
-              <ChevronDown
-                size={16}
-                className={`transition-transform ${
-                  openSubmenu === item.label ? 'rotate-180' : ''
-                }`}
-              />
-            </button>
+              className={openSubmenu === item.label ? '[&_.pi]:rotate-180' : ''}
+            />
           </div>
           {openSubmenu === item.label && (
             <div className="ml-4 space-y-1">
@@ -283,14 +281,15 @@ function Header() {
           </nav>
 
           <div className="hidden items-center gap-1 lg:flex">
-            <button
+            <Button
               type="button"
+              icon="pi pi-search"
+              text
+              rounded
               aria-label="Abrir buscador de recursos"
               className={iconButtonClass}
               onClick={openSearch}
-            >
-              <Search size={18} />
-            </button>
+            />
             {SOCIAL_LINKS.map(({ label, href }) => {
               const SocialIcon = SOCIAL_ICONS[label]
 
@@ -311,31 +310,33 @@ function Header() {
             })}
           </div>
 
-          <button
+          <Button
             type="button"
+            icon={isOpen ? 'pi pi-times' : 'pi pi-bars'}
+            text
+            rounded
             aria-label="Abrir menu"
-            className={`inline-flex rounded-md p-2 lg:hidden ${effectiveOpaque ? 'text-primary' : 'text-white'}`}
+            className={`lg:hidden ${effectiveOpaque ? 'text-primary' : 'text-white'}`}
             onClick={() => {
               setIsOpen(!isOpen)
               setOpenSubmenu(null)
             }}
-          >
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          />
         </div>
 
         {isOpen && (
           <div className="mt-4 space-y-1 rounded-lg border border-slate-200 bg-white p-4 lg:hidden">
             {NAV_ITEMS.map((item) => renderMobileNavItem(item))}
             <div className="flex items-center gap-1 pt-4">
-              <button
+              <Button
                 type="button"
+                icon="pi pi-search"
+                text
+                rounded
+                severity="secondary"
                 aria-label="Abrir buscador de recursos"
-                className="inline-flex h-10 w-10 items-center justify-center text-slate-600 transition hover:text-primary"
                 onClick={openSearch}
-              >
-                <Search size={18} />
-              </button>
+              />
               {SOCIAL_LINKS.map(({ label, href }) => {
                 const SocialIcon = SOCIAL_ICONS[label]
 

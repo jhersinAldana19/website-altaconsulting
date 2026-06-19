@@ -10,6 +10,7 @@ import OutsourcingFinanzasPage from './pages/OutsourcingFinanzasPage'
 import ResourcesPage from './pages/ResourcesPage'
 import ServicesPage from './pages/ServicesPage'
 import ContactPage from './pages/ContactPage'
+import SimulatorPage from './pages/SimulatorPage'
 import WhatsAppFloatButton from './components/layout/WhatsAppFloatButton'
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           element={<Navigate to={{ pathname: '/', hash: 'testimonios' }} replace />}
         />
         <Route path="/recursos" element={<ResourcesPage />} />
+        <Route path="/simulador" element={<SimulatorPage />} />
         <Route path="/contacto" element={<ContactPage />} />
       </Routes>
       <WhatsAppFloatButton />

@@ -38,18 +38,20 @@ function MapSection() {
                 <ButtonLink
                   href={OFFICE_MAP.wazeUrl}
                   variant="secondary"
+                  size="small"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="!rounded-sm !px-3 !py-1.5 !text-xs !font-semibold uppercase tracking-wide"
+                  className="uppercase tracking-wide"
                 >
                   Waze
                 </ButtonLink>
                 <ButtonLink
                   href={OFFICE_MAP.mapsUrl}
                   variant="secondary"
+                  size="small"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="!rounded-sm !px-3 !py-1.5 !text-xs !font-semibold uppercase tracking-wide"
+                  className="uppercase tracking-wide"
                 >
                   Google Maps
                 </ButtonLink>

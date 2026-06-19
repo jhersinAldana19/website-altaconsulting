@@ -1,5 +1,5 @@
-import { Search, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import { Button } from 'primereact/button'
 
 function SearchOverlay({ isOpen, onClose, onSearch }) {
   const [term, setTerm] = useState('')
@@ -41,14 +41,16 @@ function SearchOverlay({ isOpen, onClose, onSearch }) {
       aria-modal="true"
       aria-label="Buscar recursos"
     >
-      <button
+      <Button
         type="button"
-        className="absolute right-5 top-5 inline-flex h-11 w-11 items-center justify-center text-white/80 transition hover:text-white"
+        icon="pi pi-times"
+        text
+        rounded
+        severity="contrast"
+        className="!absolute right-5 top-5 !text-white/80 hover:!text-white"
         onClick={onClose}
         aria-label="Cerrar buscador"
-      >
-        <X size={22} />
-      </button>
+      />
 
       <form onSubmit={handleSubmit} className="w-full max-w-2xl">
         <p className="mb-3 text-center text-sm text-white/85">
@@ -63,13 +65,15 @@ function SearchOverlay({ isOpen, onClose, onSearch }) {
             placeholder="Ej.: planeamiento estrategico, Gneomar Natzmar, Outsourcing Financiero"
             className="w-full rounded-xl border border-accent/70 bg-slate-900/85 py-3 pl-4 pr-12 text-base text-white outline-none transition placeholder:text-white/60 focus:border-accent"
           />
-          <button
+          <Button
             type="submit"
-            className="absolute right-1 top-1/2 -translate-y-1/2 inline-flex h-9 w-9 items-center justify-center text-white/80 transition hover:text-white"
+            icon="pi pi-search"
+            text
+            rounded
+            severity="contrast"
+            className="!absolute right-1 top-1/2 -translate-y-1/2 !text-white/80 hover:!text-white"
             aria-label="Buscar"
-          >
-            <Search size={18} />
-          </button>
+          />
         </label>
         <p className="mt-2 text-center text-xs text-white/70">Pulse ESC para cerrar</p>
       </form>

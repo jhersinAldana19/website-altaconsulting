@@ -23,16 +23,13 @@ export const ABOUT_CONTENT = {
     'Somos un equipo especializado, comprometidos en brindar un servicio de calidad, ofreciendo asesoramiento de confianza, ágil e innovador con un alto nivel de exigencia para la satisfaccion de nuestros clientes, y puedan liderar los retos del mercado actual.',
 }
 
-/** Entre “Cuatro líneas…” y “Nuestras principales magnitudes” en la página de inicio. */
-export const HOME_EXPERTISE_BRIDGE = {
-  title: 'De la contabilidad diaria a decisiones con respaldo',
-  lead:
-    'Somos un equipo especializado, comprometido en brindar un servicio de calidad, ofreciendo asesoramiento de confianza, ágil e innovador con un alto nivel de exigencia para la satisfacción de nuestros clientes, y para que puedan liderar los retos del mercado actual.',
-  points: [
-    // puntos eliminados por petición del cliente
-  ],
-  imageAlt:
-    'Consultores revisando documentación contable y reportes financieros en entorno corporativo',
+/** Promo del simulador en la página de inicio. */
+export const HOME_SIMULATOR_PROMO = {
+  title: '¿Sabes cuánto gana realmente tu negocio?',
+  description:
+    'Calcula de forma referencial tus costos, gastos, impuestos y ganancia neta con nuestro simulador de ganancias y pérdidas.',
+  cta: 'Usar simulador',
+  ctaHref: '/simulador',
 }
 
 export const MISSION_VISION = [
